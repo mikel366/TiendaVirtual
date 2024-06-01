@@ -1,0 +1,54 @@
+header {
+  display: flex;
+  justify-content: space-between; /* Espacio entre el logo y la barra de navegación */
+  align-items: center; /* Centra verticalmente los elementos */
+  background-color: #FF5722; /* Color de fondo del header */
+  height: 75px;
+}
+
+.logo {
+  background-color: black; /* Color de fondo amarillo para el logo */
+  padding: 10px; /* Espaciado interno del logo */
+  width: 300px;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.logo figure,
+.logo .nombrelogo {
+  display: inline-block; /* Asegura que los elementos del logo se alineen horizontalmente */
+  margin: 0; /* Elimina los márgenes predeterminados */
+}
+
+.logo .nombrelogo span {
+  display: block; /* Hace que los títulos del logo se apilen verticalmente */
+}
+
+.tituloLogo{
+  text-decoration: none;
+  color: #FF5722;
+}
+
+nav {
+  margin-left: auto; /* Empuja el nav a la derecha */
+}
+
+nav .barraDeNavegacion ul {
+  display: flex; /* Hace que los elementos de la lista se alineen horizontalmente */
+  list-style: none; /* Elimina los puntos de la lista */
+  padding: 0; /* Elimina el padding predeterminado */
+  margin: 0; /* Elimina el margen predeterminado */
+}
+
+nav .barraDeNavegacion ul li {
+  margin-right: 20px; /* Espaciado entre los elementos de la navegación */
+}
+
+
+
+.elementosDeNav {
+  text-decoration: none; 
+  color: black; 
+  font-style: italic;
+}

@@ -1,0 +1,10 @@
+h1{
+    text-align: center;
+    margin: 15px;
+    color: #FF5722;
+}
+.container-cards{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5.8%;
+}
