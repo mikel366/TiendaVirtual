@@ -1,31 +1,24 @@
-import { Component, Input } from '@angular/core';
-import { Productos } from '../productos';
-import { ProductosService } from '../productos.service';
-import { CurrencyPipe, NgFor } from '@angular/common';
+import { Component, inject, Input } from '@angular/core';
+import { Productos } from '../interfaces/productos';
+import { CurrencyPipe, SlicePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [NgFor, CurrencyPipe],
+  imports: [CurrencyPipe, SlicePipe],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-  productos: Productos[] = [];
 
-  constructor( private productosService: ProductosService)
-  {
-    this.recuperar();
-  }
-
-  recuperar()
-  {
-    this.productosService.retornar().subscribe((productos: Productos[])=>{
-      this.productos = productos;
-    });
-  }
-
+  private _router = inject(Router)
   
+  @Input() producto?: Productos;
 
+  verMas(id?: number)
+  {
+    this._router.navigate(['/productos', id]);
+  }
 }

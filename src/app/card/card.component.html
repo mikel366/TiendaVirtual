@@ -1,11 +1,9 @@
-<div class="container-cards">
-    <div class="card" *ngFor="let producto of productos">
-        <img src="{{producto.images}}" alt="Descripción de la imagen">
-        <div class="card-content">
-            <h2>{{producto.title}}</h2>
-            <p>{{producto.description.slice(0, 100)}}</p>
-            <p>{{producto.price | currency}}</p>
-            <a href="#" class="btn">Ver más</a>
-        </div>
+<div class="card" style="width: 18rem;">
+    <img src="{{ producto?.image }}" alt="{{ producto?.title }}">
+    <div class="card-content">
+        <h2>{{producto?.title?.slice(0, 30)}}</h2>
+        <p>{{producto?.description?.slice(0, 100) }}</p>
+        <h2>{{producto?.price | currency}}</h2>
+        <button class="btn" (click)="verMas(producto?.id)">Ver más</button>
     </div>
 </div>

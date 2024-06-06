@@ -1,6 +1,16 @@
-<h1>PRODUCTOS</h1>
 <div class="container">
-    <div class="container-cards">
-        <app-card></app-card>
+    <h1>Galería de Productos</h1>
+    <div class="filter">
+        <div class="buscador">
+            <input type="text" id="searchInput" placeholder="Buscador">
+        </div>
+        <div class="chebox">
+            <h5>filtrar por:</h5>
+            <input type="checkbox">categoria
+            <input type="checkbox">Marca
+        </div>
+    </div>
+    <div class="container-cards" id="productGrid">
+        <app-card *ngFor="let producto of productos" [producto]="producto" />
     </div>
 </div>
