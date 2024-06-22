@@ -8,17 +8,17 @@
         
         <div class="container-producto">
             <div class="imagen">
-                <img src="{{producto?.image}}" alt="">
+                <img src="https://controlstock.com.ar/burns/{{product?.imagen_producto}}" alt="">
             </div>
             <div class="detalles-productos">
                 <div class="titulo">
-                    <h2>{{producto?.title}}</h2>
+                    <h2>{{product?.nombre_producto}}</h2>
                 </div>
                 <div class="descripcion">
-                    <p>Descripcion del producto: {{producto?.description}}</p>
+                    <p>Descripcion del producto: {{product?.descripcion_producto}}</p>
                 </div>
                 <div class="precio">
-                    <p>{{producto?.price | currency}}</p>
+                    <p>{{product?.precio_producto | currency}}</p>
                 </div>
                 <button>Comprar</button>
             </div>

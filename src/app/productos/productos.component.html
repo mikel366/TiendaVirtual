@@ -1,16 +1,27 @@
 <div class="container">
     <h1>Galería de Productos</h1>
-    <div class="filter">
-        <div class="buscador">
-            <input type="text" id="searchInput" placeholder="Buscador">
-        </div>
-        <div class="chebox">
-            <h5>filtrar por:</h5>
-            <input type="checkbox">categoria
-            <input type="checkbox">Marca
-        </div>
+    <div class="search-container">
+        <input type="text" placeholder="Buscar productos..." [(ngModel)]="searchData" (keyup)="getFilteredProduct()">
+
     </div>
     <div class="container-cards" id="productGrid">
-        <app-card *ngFor="let producto of productos" [producto]="producto" />
+        <ng-container *ngIf="searchData !== ''">
+            <app-card *ngFor="let product of filteredData" [product]="product"></app-card>
+        </ng-container>
+        <ng-container *ngIf="searchData === ''">
+            <app-card *ngFor="let product of productos" [product]="product"></app-card>
+            <app-card *ngFor="let product of productos" [product]="product"></app-card>
+            <app-card *ngFor="let product of productos" [product]="product"></app-card>
+            <app-card *ngFor="let product of productos" [product]="product"></app-card>
+            <app-card *ngFor="let product of productos" [product]="product"></app-card>
+            <app-card *ngFor="let product of productos" [product]="product"></app-card>
+            <app-card *ngFor="let product of productos" [product]="product"></app-card>
+            <app-card *ngFor="let product of productos" [product]="product"></app-card>
+            <app-card *ngFor="let product of productos" [product]="product"></app-card>
+            <app-card *ngFor="let product of productos" [product]="product"></app-card>
+            <app-card *ngFor="let product of productos" [product]="product"></app-card>
+            <app-card *ngFor="let product of productos" [product]="product"></app-card>
+        </ng-container>
     </div>
+    <span class="loader" *ngIf="loader"></span>
 </div>

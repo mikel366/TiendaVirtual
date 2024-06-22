@@ -1,21 +1,27 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Productos } from '../interfaces/productos';
+import { inject, Injectable } from '@angular/core';
+import {  Resultado } from '../interfaces/productos';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductosService {
-  private urlApi = 'https://fakestoreapi.com/products';
+  private urlApi = 'https://controlstock.com.ar/burns/api/productos';
 
-  constructor(private http: HttpClient) { }
+  private http = inject(HttpClient)
 
-  getProduct(): Observable<Productos[]>{
-    return this.http.get<Productos[]>(this.urlApi);
+
+  getProducts(): Observable<Resultado>{
+    return this.http.get<Resultado>(this.urlApi);
   }
 
-  getProductoById(id: number): Observable<any>{
-    return this.http.get<Productos>(`${this.urlApi}/${id}`);
+  getProductoById(id: number): Observable<Resultado>{
+    return this.http.get<Resultado>(`${this.urlApi}?linkTo=id_producto&equalTo=${id}`);
+  }
+
+  getProductByName(name: string)
+  {
+    return this.http.get(`${this.urlApi}?linkTo=nombre_producto&equalTo=${name}`)
   }
 }

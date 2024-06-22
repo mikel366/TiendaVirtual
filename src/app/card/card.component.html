@@ -1,9 +1,9 @@
 <div class="card" style="width: 18rem;">
-    <img src="{{ producto?.image }}" alt="{{ producto?.title }}">
+    <img src="https://controlstock.com.ar/burns/{{ product.imagen_producto }}" alt="{{ product.nombre_producto }}">
     <div class="card-content">
-        <h2>{{producto?.title?.slice(0, 30)}}</h2>
-        <p>{{producto?.description?.slice(0, 100) }}</p>
-        <h2>{{producto?.price | currency}}</h2>
-        <button class="btn" (click)="verMas(producto?.id)">Ver más</button>
+        <h2>{{product.nombre_producto.slice(0, 30)}}</h2>
+        <p>{{product.descripcion_producto.slice(0, 100) }}</p>
+        <h2>{{product.precio_producto | currency}}</h2>
+        <button class="btn" (click)="verMas(product.id_producto)">Ver más</button>
     </div>
 </div>
