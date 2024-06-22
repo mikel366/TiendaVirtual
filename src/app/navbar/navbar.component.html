@@ -1,23 +1,17 @@
-<header>
+<header class="header">
     <div class="logo">
-        <figure>
-            <a href=""><img src="" alt="" /></a>
-        </figure>
-        <p class="nombrelogo">
-            <span><a href="" class="tituloLogo"><b>TITULO</b></a></span>
-            <span><a href="" class="tituloLogo">TITULO</a></span>
-        </p>
+        <a routerLink="home"><img class="img-logo" src="../../assets/imagenes/logo.png" alt=""></a>
     </div>
-    <nav>
-        <div class="barraDeNavegacion">
-            <ul>
-                <li>
-                    <a routerLink="home" class="elementosDeNav"><b>Home</b></a>
-                </li>
-                <li>
-                    <a routerLink="productos" class="elementosDeNav"><b>Productos</b></a>
-                </li>
-            </ul>
-        </div>
+    <input type="checkbox" id="toggle">
+    <label for="toggle">
+        <img class="menu" src="../../assets/imagenes/menu.svg" alt="menu">
+    </label>
+
+    <nav class="navigation">
+        <ul>
+            <li><a routerLink="home"><b>home</b></a></li>
+            <li><a routerLink="productos"><b>Productos</b></a></li>
+            <li><a href="#"><b>Contacto</b></a></li>
+        </ul>
     </nav>
 </header>

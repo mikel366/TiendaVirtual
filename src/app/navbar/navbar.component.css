@@ -1,54 +1,76 @@
-header {
-  display: flex;
-  justify-content: space-between; /* Espacio entre el logo y la barra de navegación */
-  align-items: center; /* Centra verticalmente los elementos */
-  background-color: #FF5722; /* Color de fondo del header */
-  height: 75px;
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #FF5722;
+    padding: 0px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+.logo .img-logo{
+    width: 140px;
+    
+}
+.navigation ul{
+    list-style: none;
 }
 
-.logo {
-  background-color: black; /* Color de fondo amarillo para el logo */
-  padding: 10px; /* Espaciado interno del logo */
-  width: 300px;
-  height: 100%;
-  text-align: center;
-  justify-content: center;
+.header .navigation ul li{
+    float: left;
+    position: relative;
 }
 
-.logo figure,
-.logo .nombrelogo {
-  display: inline-block; /* Asegura que los elementos del logo se alineen horizontalmente */
-  margin: 0; /* Elimina los márgenes predeterminados */
+.header .navigation ul li a{
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px; 
+    display: block;
+    transition: all .2s ease;
+    text-transform: capitalize;
 }
 
-.logo .nombrelogo span {
-  display: block; /* Hace que los títulos del logo se apilen verticalmente */
+.header .navigation ul li a:hover{
+    color: black;
 }
 
-.tituloLogo{
-  text-decoration: none;
-  color: #FF5722;
+#toggle, .header label{
+    display: none;
+    cursor: pointer;
 }
 
-nav {
-  margin-left: auto; /* Empuja el nav a la derecha */
+.menu{
+    width: 45px;
+    height: 35px;
 }
 
-nav .barraDeNavegacion ul {
-  display: flex; /* Hace que los elementos de la lista se alineen horizontalmente */
-  list-style: none; /* Elimina los puntos de la lista */
-  padding: 0; /* Elimina el padding predeterminado */
-  margin: 0; /* Elimina el margen predeterminado */
-}
-
-nav .barraDeNavegacion ul li {
-  margin-right: 20px; /* Espaciado entre los elementos de la navegación */
-}
-
-
-
-.elementosDeNav {
-  text-decoration: none; 
-  color: black; 
-  font-style: italic;
-}
+@media (max-width: 950px){
+    .header label{
+        display: initial;
+    }
+    .header{
+        padding: 20px 10%;
+    }
+    .header .navigation{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #FF5722;
+        display: none;
+    }
+    .header .navigation ul li {
+        width: 100%;
+    }
+    .header .navigation ul li a{
+        padding: 8px 30px 8px 10%;
+    }
+    
+    #toggle:checked ~ .navigation{
+        display: block;
+        text-align: center;
+    }
+}   
