@@ -1,4 +1,4 @@
-
+@if (product.estado_producto == 2) {
 <div class="card" style="width: 18rem;">
     <img src="https://controlstock.com.ar/burns/{{ product.imagen_producto }}" alt="{{ product.nombre_producto }}">
     <div class="card-content">
@@ -8,3 +8,4 @@
         <button class="btn" (click)="verMas(product.id_producto)">Ver más</button>
     </div>
 </div>
+}

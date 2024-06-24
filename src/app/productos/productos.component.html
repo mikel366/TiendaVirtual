@@ -1,27 +1,31 @@
 <div class="container">
-    <h1>Galería de Productos</h1>
+  <h1>Galería de Productos</h1>
+  <div class="filters-container">
     <div class="search-container">
-        <input type="text" placeholder="Buscar productos..." [(ngModel)]="searchData" (keyup)="getFilteredProduct()">
+      <input type="text" placeholder="Buscar productos..." [(ngModel)]="searchData" (keyup)="getFilteredProduct()">
+    </div>
 
+    <div class="product-filter">
+      <label for="brand-select">Filtrar por marca:</label>
+      <select id="brand-select" [(ngModel)]="selectedMarca" (change)="getFilteredProduct()">
+        <option [ngValue]="''">Todas las marcas</option>
+        <option *ngFor="let marca of marcas" [ngValue]="marca.id_marca">{{ marca.nombre_marca }}</option>
+      </select>
+      <label for="category-select">Filtrar por categoría:</label>
+      <select id="category-select" [(ngModel)]="selectedCategoria" (change)="getFilteredProduct()">
+        <option [ngValue]="''">Todas las categorías</option>
+        <option *ngFor="let categoria of categorias" [ngValue]="categoria.id_categoria">{{ categoria.nombre_categoria }}</option>
+      </select>
     </div>
-    <div class="container-cards" id="productGrid">
-        <ng-container *ngIf="searchData !== ''">
-            <app-card *ngFor="let product of filteredData" [product]="product"></app-card>
-        </ng-container>
-        <ng-container *ngIf="searchData === ''">
-            <app-card *ngFor="let product of productos" [product]="product"></app-card>
-            <app-card *ngFor="let product of productos" [product]="product"></app-card>
-            <app-card *ngFor="let product of productos" [product]="product"></app-card>
-            <app-card *ngFor="let product of productos" [product]="product"></app-card>
-            <app-card *ngFor="let product of productos" [product]="product"></app-card>
-            <app-card *ngFor="let product of productos" [product]="product"></app-card>
-            <app-card *ngFor="let product of productos" [product]="product"></app-card>
-            <app-card *ngFor="let product of productos" [product]="product"></app-card>
-            <app-card *ngFor="let product of productos" [product]="product"></app-card>
-            <app-card *ngFor="let product of productos" [product]="product"></app-card>
-            <app-card *ngFor="let product of productos" [product]="product"></app-card>
-            <app-card *ngFor="let product of productos" [product]="product"></app-card>
-        </ng-container>
-    </div>
-    <span class="loader" *ngIf="loader"></span>
+  </div>
+
+  <div class="container-cards" id="productGrid">
+    <ng-container *ngIf="filteredData.length > 0">
+      <app-card *ngFor="let product of filteredData" [product]="product"></app-card>
+    </ng-container>
+    <ng-container *ngIf="filteredData.length === 0">
+      <p>No se encontraron productos</p>
+    </ng-container>
+  </div>
+  <span class="loader" *ngIf="loader"></span>
 </div>

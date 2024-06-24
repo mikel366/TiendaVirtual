@@ -6,14 +6,16 @@
             <li><img src="../../assets/imagenes/img3.jpg" alt=""></li>
             <li><img src="../../assets/imagenes/diseno-tiendas-virtuales-2.png" alt=""></li>
         </ul>
-        <div class="contenido">
+        <div class="contenido" [class.hidden]="isHidden">
             <h1>La mejor tienda para ser Estafado</h1>
             <p>Estafados es tu tienda virtual de confianza, donde la pasión por la moda, la tecnología y los productos
                 innovadores se encuentran. Nos enorgullecemos de ofrecer una amplia selección de artículos de alta
                 calidad que satisfacen todos los gustos y necesidades.</p>
             <a routerLink="productos" class="btn">Ver productos</a>
         </div>
+        <button class="toggle-btn" (click)="toggleContent()">Mostrar/Ocultar Mensaje</button>
     </div>
+
 
     <div class="container-cosas">
         <div class="fila">
@@ -49,7 +51,7 @@
             <p>En Estafados, no solo compras, sino que también formas parte de una comunidad que valora la calidad, la
                 innovación y el buen servicio. Síguenos en nuestras redes sociales para estar al tanto de las últimas
                 novedades, promociones exclusivas y mucho más.</p>
-                <a routerLink="contacto" class="btn">Contactanos</a>
+            <a routerLink="contacto" class="btn">Contactanos</a>
         </div>
     </div>
 </div>
